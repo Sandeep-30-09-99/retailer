@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917039783518",
+    "project_id": "take-in-335713",
+    "storage_bucket": "take-in-335713.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917039783518:android:9e143b7a0317b293a75ecf",
+        "android_client_info": {
+          "package_name": "com.rk.riggle_sales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917039783518-d0soi4o19jk6kg9gnlm177vaooti1kc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGxzrwuKC25Yuue0CVsoWiGnsqkdSDd_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917039783518-d0soi4o19jk6kg9gnlm177vaooti1kc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

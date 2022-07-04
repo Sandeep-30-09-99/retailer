@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#442B7E</color>
+    <color name="purple_700">#3B3A3C</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#ffffff</color>
+    <color name="grey">#898989</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="text_color">#CED6E0</color>
+    <color name="text_color_333333">#D9FFFFFF</color>
+    <color name="text_color_333one">#808080</color>
+    <color name="edit_back_color">#F3F0FF</color>
+    <color name="stroke_color">#878789</color>
+
+    <color name="stroke_color_one">#5CAC7D</color>
+
+
+    <color name="button_color">#5CAC7D</color>
+    <color name="button_color_30">#805CAC7D</color>
+
+    <color name="edit_text_color">#A2A2A2</color>
+    <color name="text_color_4D4D4D">#A2A2A2</color>
+    <color name="text_color_AFAFAF">#AFAFAF</color>
+    <color name="text_color_5CAC7D">#5CAC7D</color>
+    <color name="yellow_color">#FECF4C</color>
+    <color name="color_F1F4F3">#F1F4F3</color>
+    <color name="color_F1F4F3_two">#333333</color>
+    <color name="color_707070">#D9FFFFFF</color>
+    <color name="color_C4C4C4">#C4C4C4</color>
+    <color name="color_C4C4C4_one">#1CFFFFFF</color>
+    <!--<color name="color_999999">#999999</color>-->
+    <color name="color_999999">#444444</color>
+    <color name="color_999_one">#FFFFFF</color>
+    <color name="color_999_two">#999999</color>
+    <color name="color_5F5F5F">#BDFFFFFF</color>
+
+    <color name="color_17">#2BFFFFFF</color>
+    <color name="color_C6345C">#C6345C</color>
+    <color name="color_FD6A6A">#FD6A6A</color>
+
+    <color name="color_picked">#D9AE56</color>
+
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <color name="color_F4F4F4">#F4F4F4</color>
+    <color name="color_FCA785">#FCA785</color>
+    <color name="color_FA5769">#FA5769</color>
+    <color name="color_686868">#A1FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="night_color">#121212</color>
+    <color name="night_color_one">#2A2A2A</color>
+
+    <color name="night_text_color">#333333</color>
+    <color name="night_text_c">#FFFFFF</color>
+    <color name="color_F1F4F3_night">#3B3A3C</color>
+    <color name="color_one_night">#1D1D1D</color>
+    <color name="color_card_night">#000000</color>
+    <color name="color_card_nightOne">#353536</color>
+
+    <color name="basic_white">#121212</color>
+    <color name="color_F8F8F8">#333333</color>
+
+    <color name="colorPrimaryPix">#442B7E</color>
+    <color name="colorPrimaryLightPix">#442B7E</color>
+    <color name="color_CED6E0">#CED6E0</color>
+    <color name="color_8B8B8E">#8B8B8E</color>
+
+    <color name="color_F1F4F3_one">#000000</color>
+
+    <color name="shimmer_color">#DDDDDD</color>
+    <color name="color_EAEAEA">#EAEAEA</color>
+    <color name="color_EAEAEAOne">#48484A</color>
+    <color name="color_A5A5A5">#A5A5A5</color>
+
+    <color name="color_to_resturant">#5DC4CC</color>
+    <color name="color_to_picked">#D9AE56</color>
+    <color name="color_to_delivery">#5CAC7D</color>
+    <color name="color_done_delivery">#C6345C</color>
+
+    <color name="color_3E305F">#3E305F</color>
+    <color name="color_3E305FOne">#6A43C5</color>
+    <color name="color_442B7E">#442B7E</color>
+    <color name="color_442B7EOne">#8E6BE0</color>
+
+    <color name="color_5DC4CC">#5DC4CC</color>
+    <color name="color_4DA8AF">#4DA8AF</color>
+
+    <color name="color_5CAC7D">#5CAC7D</color>
+    <color name="color_4E996D">#4E996D</color>
+
+    <color name="color_D9AE56">#D9AE56</color>
+    <color name="color_CF9723">#CF9723</color>
+
+    <color name="white_day">#333333</color>
+    <color name="drawer_color">#000000</color>
+    <color name="wallet_color">#1A1A1A</color>
+
+    <color name="home_items">#1C1C1D</color>
+    <color name="home_price">#9370E5</color>
+    <color name="delivery_fee">#ffffff</color>
+    <color name="branch_color">#5CAC7D</color>
+    <color name="settings_divider">#80333333</color>
+    <color name="transparent_one">#1C1C1D</color>
+    <color name="divider">#878789</color>
+    <color name="please_confirm">#99EBEBF5</color>
+    <color name="total_amount">#8FC2C1C3</color>
+
+    <color name="transparent_two">#333333</color>
+    <color name="color_EEEEEE">#33EEEEEE</color>
+
+    <color name="gallery">#999BA2</color>
+    <color name="gallery_stroke">#999BA2</color>
+
+    <color name="arrow_color">#78FFFFFF</color>
+    <color name="review_name">#9370E5</color>
+
+</resources>
