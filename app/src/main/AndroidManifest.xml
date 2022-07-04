@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.rk.riggle_sales">
+    package="com.rk.riggle_retailer">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name="com.rk.riggle_sales.App"
+        android:name="com.rk.riggle_retailer.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_icon"
         android:label="@string/app_name"
@@ -35,11 +35,11 @@
             android:required="false" />
 
         <activity
-            android:name="com.rk.riggle_sales.utils.permission.PermissionsActivity"
+            android:name="com.rk.riggle_retailer.utils.permission.PermissionsActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.welcome.WelcomeActivity"
+            android:name="com.rk.riggle_retailer.ui.welcome.WelcomeActivity"
             android:screenOrientation="portrait"
             android:exported="true"
             tools:ignore="LockedOrientationActivity" >
@@ -50,12 +50,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.rk.riggle_sales.ui.main.view.MainActivity">
+        <activity android:name="com.rk.riggle_retailer.ui.main.view.MainActivity">
 
         </activity>
 
         <receiver
-            android:name="com.rk.riggle_sales.utils.otpdetect.MySMSBroadcastReceiver"
+            android:name="com.rk.riggle_retailer.utils.otpdetect.MySMSBroadcastReceiver"
             android:exported="true"
             android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
             <intent-filter>
@@ -64,7 +64,7 @@
         </receiver>
 
         <service
-            android:name="com.rk.riggle_sales.utils.firebase.MyFirebaseMessagingService"
+            android:name="com.rk.riggle_retailer.utils.firebase.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

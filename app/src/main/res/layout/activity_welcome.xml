@@ -5,7 +5,7 @@
 
         <variable
             name="callback"
-            type="com.rk.riggle_sales.di.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter.SimpleCallback" />
 
         <variable
             name="pos"
@@ -17,7 +17,7 @@
 
         <variable
             name="vm"
-            type="com.rk.riggle_sales.ui.welcome.WelcomeActivityVM" />
+            type="com.rk.riggle_retailer.ui.welcome.WelcomeActivityVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -12,13 +12,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="grey">#898989</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FC8C4D</color>
+    <color name="deactive">#898989</color>
 
     <color name="text_color">#442B7E</color>
     <color name="text_color_333333">#333333</color>
     <color name="text_color_333one">#333333</color>
     <color name="edit_back_color">#F3F0FF</color>
     <color name="stroke_color">#CED6E0</color>
+    <color name="text_color_dark">#2A3436</color>
 
     <color name="stroke_color_one">#5CAC7D</color>
 
