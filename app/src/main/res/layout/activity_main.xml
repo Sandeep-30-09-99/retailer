@@ -3,6 +3,13 @@
 
     <data>
 
+        <variable
+            name="selected"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.rk_tech.riggle_runner.ui.main.main.MainViewModel" />
 
     </data>
 
@@ -36,8 +43,8 @@
                 android:layout_height="0dp"
                 android:background="@color/white"
                 android:orientation="horizontal"
-                app:constraint_referenced_ids="llOne,llTFour,llTwo,llThree"
-                app:flow_verticalGap="2dp"
+                app:constraint_referenced_ids="llOne,llTwo,llThree,llFour,llFive"
+                app:flow_verticalGap="@dimen/_3sdp"
                 app:flow_verticalStyle="packed"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,14 +56,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
+                android:onClick="@{v->vm.onClick(v)}"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
 
-                    />
+                    android:src="@drawable/ic_order_unselected"
+                    android:tint="@{selected==1?@color/orange:@color/dark_gray}" />
                 <!-- android:src="@drawable/ic_pending_icon"-->
 
                 <TextView
@@ -64,29 +72,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/orders"
-                    />
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@{selected==1?@color/orange:@color/dark_gray}" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llTFour"
+                android:id="@+id/llFive"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:onClick="@{v->vm.onClick(v)}"
                 android:gravity="center"
-
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_settings_icon"
+                    android:tint="@{selected==5?@color/orange:@color/dark_gray}"
+
                     />
-                <!--android:src="@drawable/ic_completed_icon"-->
+
+
+                <!-- android:src="@drawable/ic_pending_icon"-->
+
                 <TextView
                     style="@style/TextView.Regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/new_orders"
-                     />
+                    android:textSize="@dimen/_10ssp"
+                    android:text="@string/settings"
+                    android:textColor="@{selected==5?@color/orange:@color/dark_gray}" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -95,23 +111,25 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
-                android:orientation="vertical">
+                android:onClick="@{v->vm.onClick(v)}"
+                android:orientation="vertical"
+                android:tint="@color/dark_gray">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_resource_package"
+                    android:tint="@{selected==2?@color/orange:@color/dark_gray}" />
 
-                    />
-                <!--android:src="@drawable/ic_new_order_icon"-->
                 <TextView
                     style="@style/TextView.Regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics"
-                    />
+                    android:text="@string/new_orders"
+                    android:lines="1"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@{selected==2?@color/orange:@color/dark_gray}" />
 
-                <!--android:text="@string/new_order"-->
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -119,21 +137,47 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
+                android:onClick="@{v->vm.onClick(v)}"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_settings_icon"
-                    />
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_shopping_cart"
+                    android:tint="@{selected==3?@color/orange:@color/dark_gray}" />
+                <!--android:src="@drawable/ic_new_order_icon"-->
+                <TextView
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cart"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@{selected==3?@color/orange:@color/dark_gray}" />
+
+                <!--android:text="@string/new_order"-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_credit"
+                    android:tint="@{selected==4?@color/orange:@color/dark_gray}" />
 
                 <TextView
                     style="@style/TextView.Regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile"
-                    />
+                    android:textSize="@dimen/_10ssp"
+                    android:text="@string/credit"
+                    android:textColor="@{selected==4?@color/orange:@color/dark_gray}" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

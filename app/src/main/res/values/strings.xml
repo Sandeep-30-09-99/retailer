@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Riggle Retailer</string>
-   <!--<string name="place_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCwPx29lISD18eKQEYzHs-ZFqVpjVfNBKQ&lt;!&ndash;AIzaSyAe89wSeaCjapEyZ6iLO_XD90tkijfD0NU&ndash;&gt;</string>-->
+    <!--<string name="place_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCwPx29lISD18eKQEYzHs-ZFqVpjVfNBKQ&lt;!&ndash;AIzaSyAe89wSeaCjapEyZ6iLO_XD90tkijfD0NU&ndash;&gt;</string>-->
     <string name="place_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCK2aAnZIJ-JCv_-a5AXWn34pyoZCrj49E</string>
     <string name="session_expired">session_expired</string>   <!--AIzaSyCwPx29lISD18eKQEYzHs-ZFqVpjVfNBKQ-->
     <string name="alert">Alert</string>
@@ -70,7 +70,7 @@
     <string name="help">Help</string>
     <string name="about_us">About Us</string>
     <string name="settings">Settings</string>
-    <string name="reports" >Reports</string>
+    <string name="reports">Reports</string>
     <string name="ratings">Ratings</string>
     <string name="wallet">Wallet</string>
     <string name="resend_code">Code is re-sent to your phone</string>
@@ -93,5 +93,9 @@
     <string name="profile">Profile</string>
     <string name="sign_in">Sign In</string>
     <string name="skip">Skip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="credit">Credit</string>
+    <string name="cart">Cart</string>
 
 </resources>

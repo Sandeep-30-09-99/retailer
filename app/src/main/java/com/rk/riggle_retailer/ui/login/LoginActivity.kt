@@ -152,6 +152,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun verifyOtp() {
+        startActivity(MainActivity.newIntent(this))
         when {
             viewModel.field_otp.get().isNullOrBlank() -> {
                 binding.etotp.error = "Invalid"

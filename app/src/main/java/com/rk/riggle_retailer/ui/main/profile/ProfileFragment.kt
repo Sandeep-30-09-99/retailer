@@ -31,7 +31,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             return ProfileFragment()
         }
 
-        val TAG = "NewOrderFragment"
+        const  val TAG = "ProfileFragment"
     }
 
     override fun getLayoutResource(): Int {

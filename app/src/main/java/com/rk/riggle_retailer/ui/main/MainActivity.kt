@@ -8,11 +8,17 @@ import androidx.activity.viewModels
 
 
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 
 import com.rk.riggle_retailer.R
 import com.rk.riggle_retailer.databinding.ActivityMainBinding
 import com.rk.riggle_retailer.ui.base.BaseActivity
 import com.rk.riggle_retailer.ui.base.BaseViewModel
+import com.rk.riggle_retailer.ui.main.cart.CartFragment
+import com.rk.riggle_retailer.ui.main.credit.CreditFragment
+import com.rk.riggle_retailer.ui.main.new_orders.NewOrderFragment
+import com.rk.riggle_retailer.ui.main.orders.OrdersFragment
+import com.rk.riggle_retailer.ui.main.settings.SettingsFragment
 import com.rk.riggle_retailer.utils.BackStackManager
 import com.rk_tech.riggle_runner.ui.main.main.MainViewModel
 
@@ -23,8 +29,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val mainViewModel: MainViewModel by viewModels()
-    /*private lateinit var adapter: MainAdapter*/
 
+    /*private lateinit var adapter: MainAdapter*/
     companion object {
         fun newIntent(activity: Activity): Intent {
             val intent = Intent(activity, MainActivity::class.java)
@@ -38,7 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-     //   window.statusBarColor = ContextCompat.getColor(this, R.color.black_theme)
+        //   window.statusBarColor = ContextCompat.getColor(this, R.color.black_theme)
     }
 
     override fun getLayoutResource(): Int {
@@ -50,42 +56,46 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun onCreateView() {
-      //  binding.type = 1
-     /*   mainViewModel.onClick.observe(this, Observer {
+        binding.selected = 1
+        mainViewModel.onClick.observe(this, Observer {
             when (it?.id) {
                 R.id.llOne -> {
-                    binding.type = 1
-                    changeFragment(PendingOrdersFragment.TAG)
+                    binding.selected = 1
+                    changeFragment(OrdersFragment.TAG)
                 }
                 R.id.llTwo -> {
-                    binding.type = 2
+                    binding.selected = 2
                     changeFragment(NewOrderFragment.TAG)
                 }
                 R.id.llThree -> {
-                    binding.type = 3
+                    binding.selected = 3
+                    changeFragment(CartFragment.TAG)
+                }
+                R.id.llFour -> {
+                    binding.selected = 4
+                    changeFragment(CreditFragment.TAG)
+                }
+                R.id.llFive -> {
+                    binding.selected = 4
                     changeFragment(SettingsFragment.TAG)
                 }
-                R.id.llTFour -> {
-                    binding.type = 4
-                    changeFragment(CompletedFragment.TAG)
-                }
             }
-        })*/
+        })
         /*setupUI()
         setupObserver()*/
         BackStackManager.getInstance(this).clear()
-      //  changeFragment(PendingOrdersFragment.TAG)
+        //  changeFragment(PendingOrdersFragment.TAG)
     }
 
     private fun changeFragment(tag: String?) {
         tag?.let {
             when (it) {
-              /*  PendingOrdersFragment.TAG -> {
+                OrdersFragment.TAG -> {
                     BackStackManager.getInstance(this)
                         .pushFragments(
                             R.id.flContainer,
                             it,
-                            PendingOrdersFragment.newInstance(),
+                            OrdersFragment.newInstance(),
                             true
                         )
                 }
@@ -97,10 +107,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     BackStackManager.getInstance(this)
                         .pushFragments(R.id.flContainer, it, SettingsFragment.newInstance(), true)
                 }
-                CompletedFragment.TAG -> {
+                CartFragment.TAG -> {
                     BackStackManager.getInstance(this)
-                        .pushFragments(R.id.flContainer, it, CompletedFragment.newInstance(), true)
-                }*/
+                        .pushFragments(R.id.flContainer, it, CartFragment.newInstance(), true)
+                }
+                CreditFragment.TAG -> {
+                    BackStackManager.getInstance(this)
+                        .pushFragments(R.id.flContainer, it, CreditFragment.newInstance(), true)
+                }
             }
         }
     }
