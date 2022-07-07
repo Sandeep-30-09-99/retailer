@@ -1,9 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <data>
+
+        <variable
+            name="vm"
+            type="com.rk_tech.riggle_runner.ui.main.neworder.ProfileFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/text_color_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:src="@drawable/ic_back_svg"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/iv_back"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="Deliverify Solution"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cart"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:backgroundTint="@color/dark_gray_two"
+                android:onClick="@{v->vm.onClick(v)}"
+                app:cardCornerRadius="@dimen/_6sdp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_shopping_cart" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:padding="@dimen/_10sdp"
+            app:constraint_referenced_ids="tv_stories,iv_s_one,iv_s_two,iv_s_three,iv_s_four"
+            app:flow_horizontalGap="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/tv_stories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="R Stories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp" />
+
+        <ImageView
+            android:id="@+id/iv_s_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_light_blue_ring" />
+
+        <ImageView
+            android:id="@+id/iv_s_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_orange_ring" />
+
+        <ImageView
+            android:id="@+id/iv_s_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_orange_ring" />
+
+        <ImageView
+            android:id="@+id/iv_s_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_orange_ring" />
+
+        <!-- Stories End   -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow"
+            tools:listitem="@layout/list_of_categories" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOtherCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvTopCategories"
+            tools:listitem="@layout/list_of_categories" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
