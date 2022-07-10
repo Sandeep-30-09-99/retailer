@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.rk_tech.riggle_runner.ui.main.neworder.ProfileFragmentVM" />
+            type="com.rk.riggle_retailer.ui.main.brands.sub_category.SubCategoryFragmentVM" />
     </data>
 
 
@@ -82,11 +82,11 @@
             app:layout_constraintTop_toBottomOf="@+id/header" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubCategories"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_10sdp"
-            android:id="@+id/rvSubCategories"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

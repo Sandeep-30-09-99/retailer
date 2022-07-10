@@ -27,7 +27,7 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>() {
 
         @JvmStatic
         fun newInstance() =
-            CartFragment().apply {
+            NewOrderFragment().apply {
                 arguments = Bundle().apply {
 
                 }
@@ -78,6 +78,9 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>() {
         list.add(DummyResponse("", ""))
         list.add(DummyResponse("", ""))
         categoryAdapter.list = list
+        brandAdapter.list = list
+        couponAdpater.list = list
+        distributorAdpater.list = list
         binding.rvCategories.adapter = categoryAdapter
         binding.rvOtherCategories.adapter = categoryAdapter
         binding.rvShopByBrand.adapter = brandAdapter

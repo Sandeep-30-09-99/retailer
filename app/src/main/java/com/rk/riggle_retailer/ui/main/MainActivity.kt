@@ -84,7 +84,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         /*setupUI()
         setupObserver()*/
         BackStackManager.getInstance(this).clear()
-        //  changeFragment(PendingOrdersFragment.TAG)
+         changeFragment(HomeFragment.TAG)
     }
 
     private fun changeFragment(tag: String?) {

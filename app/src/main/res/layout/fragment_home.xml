@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.rk_tech.riggle_runner.ui.main.neworder.ProfileFragmentVM" />
+            type="com.rk.riggle_retailer.ui.main.home.HomeFragmentVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,12 +17,14 @@
         <include
             android:id="@+id/new_customer"
             layout="@layout/fragment_order_new"
-            android:visibility="visible" />
+            android:visibility="visible"
+            app:vm="@{vm}" />
 
         <include
             android:id="@+id/old_cusotmer"
             layout="@layout/fragment_order_old"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:vm="@{vm}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

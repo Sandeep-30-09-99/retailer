@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.rk_tech.riggle_runner.ui.main.neworder.ProfileFragmentVM" />
+            type="com.rk.riggle_retailer.ui.main.new_orders.NewOrderVM" />
     </data>
 
     <ScrollView

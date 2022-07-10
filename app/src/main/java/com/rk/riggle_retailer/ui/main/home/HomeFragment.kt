@@ -10,6 +10,7 @@ import com.rk.riggle_retailer.R
 import com.rk.riggle_retailer.data.response.DummyResponse
 import com.rk.riggle_retailer.databinding.FragmentHomeBinding
 import com.rk.riggle_retailer.databinding.ListOfTopCategoriesBinding
+import com.rk.riggle_retailer.databinding.ListOfTopCategoriesItemsBinding
 import com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter
 import com.rk.riggle_retailer.ui.base.BaseFragment
 import com.rk.riggle_retailer.ui.base.BaseViewModel
@@ -20,7 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     val viewModel: HomeFragmentVM by viewModels()
-
 
 
     private var searchHandler: Handler = Handler(Looper.getMainLooper())
@@ -40,18 +40,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun getViewModel(): BaseViewModel {
         return viewModel
     }
+
     private var mainActivity: MainActivity? = null
     override fun onCreateView(view: View) {
         mainActivity = requireActivity() as MainActivity
         initCategoryAdapter()
     }
 
-    private lateinit var categoryAdapter: SimpleRecyclerViewAdapter<DummyResponse, ListOfTopCategoriesBinding>
+    private lateinit var categoryAdapter: SimpleRecyclerViewAdapter<DummyResponse, ListOfTopCategoriesItemsBinding>
 
 
     private fun initCategoryAdapter() {
         categoryAdapter =
-            SimpleRecyclerViewAdapter(R.layout.list_of_top_categories, BR.bean) { v, m, pos ->
+            SimpleRecyclerViewAdapter(R.layout.list_of_top_categories_items, BR.bean) { v, m, pos ->
             }
         val list = ArrayList<DummyResponse>()
         list.add(DummyResponse("", ""))
@@ -59,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         list.add(DummyResponse("", ""))
         categoryAdapter.list = list
         binding.newCustomer.rvOtherCategories.adapter = categoryAdapter
-        binding.newCustomer.rvTopCategories.adapter = categoryAdapter
+        binding.newCustomer.rvCategories.adapter = categoryAdapter
     }
 
 }
