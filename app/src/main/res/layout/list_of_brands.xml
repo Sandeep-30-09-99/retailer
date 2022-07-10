@@ -23,14 +23,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
         android:paddingTop="@dimen/_10sdp">
+
         <ImageView
+            android:id="@+id/ivProduct"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_80sdp"
-            android:id="@+id/ivProduct"
             android:src="@drawable/water_bottle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCategoryName"

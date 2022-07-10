@@ -47,7 +47,6 @@ class BrandFragment : BaseFragment<FragmentBrandBinding>() {
 
     private lateinit var brandsAdpater: SimpleRecyclerViewAdapter<DummyResponse, ListOfBrandsBinding>
 
-
     private fun initCategoryAdapter() {
         brandsAdpater =
             SimpleRecyclerViewAdapter(R.layout.list_of_brands, BR.bean) { v, m, pos ->
