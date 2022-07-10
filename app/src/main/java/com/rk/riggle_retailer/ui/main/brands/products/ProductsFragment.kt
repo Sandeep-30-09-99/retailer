@@ -14,6 +14,7 @@ import com.rk.riggle_retailer.ui.base.BaseViewModel
 import com.rk.riggle_retailer.ui.main.MainActivity
 import com.rk.riggle_retailer.ui.main.brands.product.ProductFragment
 import com.rk.riggle_retailer.ui.main.brands.sub_category.SubCategoryFragment
+import com.rk.riggle_retailer.ui.main.new_orders.NewOrderFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,7 +53,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>() {
     private fun initCategoryAdapter() {
         producstsAdapter =
             SimpleRecyclerViewAdapter(R.layout.list_of_products, BR.bean) { v, m, pos ->
-                mainActivity?.addSubFragment(TAG, ProductFragment())
+                mainActivity?.addSubFragment(NewOrderFragment.TAG, ProductFragment())
             }
         val list = ArrayList<DummyResponse>()
         list.add(DummyResponse("", ""))

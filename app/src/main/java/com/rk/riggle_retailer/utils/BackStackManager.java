@@ -137,7 +137,7 @@ public class BackStackManager {
             return true;
         if (backStack.containsKey(currentTab)) {
             Stack<Fragment> fragments = backStack.get(currentTab);
-            if (fragments != null && fragments.size() > 1) {
+            if (fragments != null && fragments.size() >= 1) {
                 fragments.pop();
                 FragmentTransaction ft = manager.beginTransaction();
                 if (animate)
@@ -152,7 +152,9 @@ public class BackStackManager {
                 }
                 Log.d(currentTab, "sub fragment removed");
                 return false;
-            } else return true;
+            } else {
+                return true;
+            }
         }
         return true;
     }
