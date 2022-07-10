@@ -17,7 +17,7 @@ import com.rk.riggle_retailer.ui.base.BaseViewModel
 import com.rk.riggle_retailer.ui.main.cart.CartFragment
 import com.rk.riggle_retailer.ui.main.credit.CreditFragment
 import com.rk.riggle_retailer.ui.main.new_orders.NewOrderFragment
-import com.rk.riggle_retailer.ui.main.orders.OrdersFragment
+import com.rk.riggle_retailer.ui.main.home.HomeFragment
 import com.rk.riggle_retailer.ui.main.settings.SettingsFragment
 import com.rk.riggle_retailer.utils.BackStackManager
 import com.rk_tech.riggle_runner.ui.main.main.MainViewModel
@@ -61,7 +61,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             when (it?.id) {
                 R.id.llOne -> {
                     binding.selected = 1
-                    changeFragment(OrdersFragment.TAG)
+                    changeFragment(HomeFragment.TAG)
                 }
                 R.id.llTwo -> {
                     binding.selected = 2
@@ -90,12 +90,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun changeFragment(tag: String?) {
         tag?.let {
             when (it) {
-                OrdersFragment.TAG -> {
+                HomeFragment.TAG -> {
                     BackStackManager.getInstance(this)
                         .pushFragments(
                             R.id.flContainer,
                             it,
-                            OrdersFragment.newInstance(),
+                            HomeFragment.newInstance(),
                             true
                         )
                 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.rk.riggle_retailer.data.response.DummyResponse" />
+
+        <variable
+            name="callback"
+            type="com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/ic_app_icon"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_bold"
+            android:lines="1"
+            android:text="Sai Prasad Store"
+            android:textColor="@color/black_85"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvOrderStatus"
+            app:layout_constraintStart_toEndOf="@+id/ivLogo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sai Prasad Store" />
+
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_order_status"
+            android:fontFamily="@font/font_medium"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_5sdp"
+
+            android:text="Pending"
+            android:textColor="@color/status_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/font_regular"
+            android:text="Frustar, Ala and 7 more"
+            android:textColor="@color/black_68"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivLogo"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderStatus" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="tvPhone,tvDetails"
+            app:flow_horizontalGap="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            app:layout_constraintWidth_percent=".6" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/ic_log_in_icon"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/orange"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_medium"
+            android:lines="1"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+            android:text="@string/view_detail"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tvDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/ic_edit_pencil"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/colorYellow"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_medium"
+            android:lines="1"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+            android:text="@string/edit"
+            android:textAllCaps="true"
+            android:textColor="@color/colorYellow"
+            android:textSize="14sp" />
+
+        <!---->
+
+        <TextView
+            android:id="@+id/tvDeliveryTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="Delivery in 2 days"
+            android:textColor="@color/black_68"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

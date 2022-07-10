@@ -163,7 +163,7 @@
 
     <color name="orange_34">#59FC8C4D</color>
 
-    <color name="colorYellow">#ffd100</color>
+    <color name="colorYellow">#F0AD00</color>
     <color name="colorYellow_34">#59ffd100</color>
     <color name="colorYellow_30">#4DFFD100</color>
     <color name="primary_09">#17ff4e00</color>
@@ -182,7 +182,8 @@
     <color name="black_theme">#2A3436</color>
     <color name="secondary_green">#15AB87</color>
     <color name="call_store">#F0AD00</color>
-    <color name="color_C7C7C7">#C7C7C7</color>
+    <color name="gray_c7">#C7C7C7</color>
+    <color name="gray_74">#657174</color>
     <color name="color_117AA7">#117AA7</color>
     <color name="color_117AA7_30">#4D117AA7</color>
     <color name="color_15AB87">#15AB87</color>

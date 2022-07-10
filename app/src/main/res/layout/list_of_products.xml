@@ -1,77 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-        <variable
-            name="bean"
-            type="com.rk.riggle_retailer.data.response.DummyResponse" />
-
-        <variable
-            name="callback"
-            type="com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter.SimpleCallback" />
-
-        <variable
-            name="pos"
-            type="Integer" />
-
-        <import type="android.view.View" />
-
-    </data>
+<layout>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingTop="@dimen/_10sdp">
+        android:layout_height="wrap_content">
 
-
-        <TextView
-            android:id="@+id/tvCategoryName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/gilroy_bold"
-            android:text="Atta"
-            android:textColor="@color/black_theme"
-            android:textSize="@dimen/_14ssp"
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:src="@drawable/water_bottle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvQuantity"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvProductName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="Neervana with added minerals..."
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProduct"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvServiceBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/gilroy_medium"
-            android:text="34 Products"
+            android:text="Neervana with added minerals..."
+            android:textColor="@color/secondary_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
 
-            android:textColor="@color/black_theme"
-            android:textSize="@dimen/_8ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCategoryName" />
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            app:constraint_referenced_ids="tvDeliveryTime,tvMOQ,tvProfit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvServiceBy" />
 
-        <ImageView
-            android:id="@+id/ivNext"
+
+        <TextView
+            android:id="@+id/tvDeliveryTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_delivery_time"
+            android:drawablePadding="@dimen/_2sdp"
+            android:text="Delivery: 3 days"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintHorizontal_weight="1.5" />
+
+        <TextView
+            android:id="@+id/tvProfit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_heart"
+            android:drawablePadding="@dimen/_2sdp"
+            android:text="Profit: Rs. 34"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <TextView
+            android:id="@+id/tvMOQ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_bullet_list"
+            android:drawablePadding="@dimen/_2sdp"
+            android:text="MOQ: 3"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <TextView
+            android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:src="@drawable/ic_arrow_no_long_tail"
-            app:layout_constraintBottom_toTopOf="@+id/ivBottom"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="Rs 125"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProduct"
+            app:layout_constraintStart_toEndOf="@+id/ivProduct"
+            app:layout_constraintTop_toBottomOf="@+id/flow" />
+
+        <TextView
+            android:id="@+id/tvMRP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="MRP 190"
+            android:textColor="@color/gray_c7"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <TextView
+            android:id="@+id/tvViewBulkOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="VIEW ALL OFFER"
+            android:textColor="@color/orange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+
+        <TextView
+            android:id="@+id/tvAdd"
+            style="@style/TextView.MediumSemibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_round_orange_solid_5sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_7sdp"
+            android:singleLine="true"
+            android:text="ADD"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/gray_rounded_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAdd"
+            app:layout_constraintWidth_percent=".85" />
+
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_r_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tv_r_earn,iv_r,tv_r_coin"
+            app:flow_horizontalGap="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/tv_r_earn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earn 20" />
+
+        <TextView
+            android:id="@+id/tv_r_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="coins" />
 
         <ImageView
-            android:id="@+id/ivBottom"
+            android:id="@+id/iv_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_r_letter" />
+
+        <ImageView
+            android:id="@+id/iv_bottom"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_4sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_bottom_line"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/dot_line"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvQuantity" />
+            app:layout_constraintTop_toBottomOf="@+id/flow_r_coin" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

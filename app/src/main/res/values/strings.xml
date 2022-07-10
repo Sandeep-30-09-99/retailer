@@ -97,5 +97,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="credit">Credit</string>
     <string name="cart">Cart</string>
+    <string name="view_offer">View Offer</string>
+    <string name="edit">Edit</string>
+    <string name="view_detail">VIEW DETAILS</string>
+    <string name="order_now">ORDER NOW</string>
 
 </resources>
