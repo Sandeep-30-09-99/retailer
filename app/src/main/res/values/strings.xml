@@ -101,5 +101,10 @@
     <string name="edit">Edit</string>
     <string name="view_detail">VIEW DETAILS</string>
     <string name="order_now">ORDER NOW</string>
-
+    <!--Asterik Text-->
+    <string name="your_name">Your Name<font color='#D64A5B'>*</font></string>
+    <string name="business_proof">Business Proof</string>
+    <string name="store_name">Store Name<font color='#D64A5B'>*</font></string>
+    <string name="pincode">PINCODE<font color='#D64A5B'>*</font></string>
+    <string name="store_type">Store Type<font color='#D64A5B'>*</font></string>
 </resources>

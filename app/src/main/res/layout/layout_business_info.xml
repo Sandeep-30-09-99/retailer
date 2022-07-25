@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/your_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="your name"
+            android:padding="@dimen/_10sdp"
+
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+
+            app:layout_constraintWidth_percent=".9" />
+
+
+        <EditText
+            android:id="@+id/etStoreName"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="store name"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et"
+            app:layout_constraintWidth_percent=".5" />
+
+        <EditText
+            android:id="@+id/etPincode"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="pincode"
+            android:inputType="number"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etStoreName"
+            app:layout_constraintTop_toBottomOf="@+id/et"
+            app:layout_constraintWidth_percent=".4" />
+
+
+        <EditText
+            android:id="@+id/etCity"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="city"
+            android:inputType="number"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etStoreName"
+
+            app:layout_constraintWidth_percent=".4" />
+
+        <EditText
+            android:id="@+id/etState"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="state"
+            android:inputType="number"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etCity"
+            app:layout_constraintTop_toBottomOf="@+id/etPincode"
+            app:layout_constraintWidth_percent=".5" />
+
+
+        <ImageView
+            android:id="@+id/ivCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/ic_check_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCity" />
+
+        <TextView
+            android:id="@+id/tvAreYouAtStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:paddingStart="@dimen/_3sdp"
+            android:text="Are you at the store?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toEndOf="@+id/ivCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/etCity" />
+
+        <TextView
+            android:id="@+id/tvBusiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/business_proof"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAreYouAtStore" />
+
+        <EditText
+            android:id="@+id/etBusiness"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="Business Proof"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBusiness"
+            app:layout_constraintWidth_percent=".9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

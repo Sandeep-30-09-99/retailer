@@ -23,9 +23,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/bg_round_orange_stroke"
-        android:paddingHorizontal="@dimen/_5sdp"
-        android:paddingVertical="@dimen/_25sdp">
+        android:paddingHorizontal="@dimen/_1sdp"
+        android:paddingVertical="@dimen/_15sdp">
 
         <ImageView
             android:id="@+id/iv"

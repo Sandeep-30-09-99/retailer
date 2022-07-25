@@ -54,7 +54,7 @@
                 android:backgroundTint="@{deactive==true?@color/deactive:@color/orange}"
                 android:padding="@dimen/_15sdp"
                 android:rotation="180"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/back_iv" />
 
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
