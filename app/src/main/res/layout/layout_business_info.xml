@@ -30,7 +30,6 @@
             android:fontFamily="@font/gilroy_medium"
             android:hint="your name"
             android:padding="@dimen/_10sdp"
-
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName"

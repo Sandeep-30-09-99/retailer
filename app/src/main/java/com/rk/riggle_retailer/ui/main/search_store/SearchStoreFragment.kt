@@ -5,14 +5,20 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.rk.riggle_retailer.BR
 import com.rk.riggle_retailer.R
+import com.rk.riggle_retailer.data.response.DummyData
 import com.rk.riggle_retailer.databinding.FragmentSearchStoreBinding
+import com.rk.riggle_retailer.databinding.ListOfProductsBinding
+import com.rk.riggle_retailer.databinding.ListOfSearchItemsBinding
+import com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter
 import com.rk.riggle_retailer.ui.base.BaseFragment
 import com.rk.riggle_retailer.ui.base.BaseViewModel
 import com.rk.riggle_retailer.ui.main.MainActivity
 import com.rk.riggle_retailer.ui.main.cart.CartFragment
 
 import dagger.hilt.android.AndroidEntryPoint
+
 @AndroidEntryPoint
 class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
 
@@ -39,7 +45,8 @@ class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
 
 
     override fun onCreateView(view: View) {
-      //  setUpRecyclerView()
+        setUpRecyclerView()
+        setUpResultAdapter()
         mainActivity = activity as MainActivity
         binding.etSearchStore.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -53,9 +60,8 @@ class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
                     binding.rvSearchAdapter.visibility = View.GONE
                 } else {
                     binding.rvSearchAdapter.visibility = View.VISIBLE
-
-                 //   searchAdapter?.list = filterList(binding.etSearchStore.text.toString())
-                   // binding.rvSearchAdapter.adapter = searchAdapter
+                    searchAdapter?.list = filterList(binding.etSearchStore.text.toString())
+                    binding.rvSearchAdapter.adapter = searchAdapter
                 }
             }
         })
@@ -68,31 +74,11 @@ class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
                     mainActivity?.onBackPressed()
 
                 }
-               /* R.id.tvNewStore -> {
-                  //  mainActivity?.addSubFragment(TAG, CreateStoreFragment())
-                    *//*val dialog =
-                        BottomSheetDialog(requireActivity(), R.style.CustomBottomSheetDialogTheme)
-                    val view = layoutInflater.inflate(R.layout.bs_order_created, null)
-                    val bt = view.findViewById<TextView>(R.id.tvCollectPayment)
-                    bt.setOnClickListener {
-                        dialog.dismiss()
-                    }
-                   *//**//* val btcanel = view.findViewById<TextView>(R.id.tvCancel)
-                    btcanel.setOnClickListener {
-                        dialog.dismiss()
-                    }*//**//*
-                    dialog.setCancelable(true)
-                    dialog.setContentView(view)
-                    dialog.show()*//*
 
-                }*/
             }
 
         }
     }
-/*
-    private var searchAdapter: SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>? =
-        null
 
 
     private fun filterList(text: String): ArrayList<DummyData> {
@@ -109,6 +95,9 @@ class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
     }
 
     private var nameList: ArrayList<DummyData>? = null
+    private var searchAdapter: SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>? =
+        null
+
     private fun setUpRecyclerView() {
         searchAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>(
             R.layout.list_of_search_items, BR.bean
@@ -126,27 +115,29 @@ class SearchStoreFragment : BaseFragment<FragmentSearchStoreBinding>() {
         nameList?.add(DummyData("Rahul", ""))
         searchAdapter?.list = nameList
 
+    }
 
-        val suggestedAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfSuggestedBinding>(
-            R.layout.list_of_suggested, BR.bean
+
+    private var resultAdapter: SimpleRecyclerViewAdapter<DummyData, ListOfProductsBinding>? =
+        null
+
+    private fun setUpResultAdapter() {
+        resultAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfProductsBinding>(
+            R.layout.list_of_products, BR.bean
         ) { v, m, pos ->
             when (v.id) {
                 R.id.rlMain -> {
+
                 }
 
             }
-            *//*  val layout = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-              binding.rvSuggested.layoutManager = layout*//*
-
         }
-        val dummyList = ArrayList<DummyData>()
-        dummyList.add(DummyData("", ""))
-        dummyList.add(DummyData("", ""))
-        suggestedAdapter.list = dummyList
-        binding.rvSuggested.adapter = suggestedAdapter
+        nameList = ArrayList<DummyData>()
+        nameList?.add(DummyData("Sandeep", ""))
+        nameList?.add(DummyData("Rahul", ""))
+        resultAdapter?.list = nameList
 
-
-    }*/
+    }
 }
 
 

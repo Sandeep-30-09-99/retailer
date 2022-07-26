@@ -8,6 +8,10 @@
             type="Boolean" />
 
         <variable
+            name="active"
+            type="Integer" />
+
+        <variable
             name="vm"
             type="com.rk.riggle_retailer.ui.login.first_time.FirstTimeLoginVM" />
     </data>
@@ -58,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/orange" />
+                android:tint="@{active==1?@color/orange:@color/gray_f4}" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,7 +107,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_f4" />
+                android:tint="@{active==2?@color/orange:@color/gray_f4}"  />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -148,7 +152,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_f4" />
+                android:tint="@{active==3?@color/orange:@color/gray_f4}"  />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -219,7 +223,7 @@
             android:src="@drawable/back_iv"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
 
         <FrameLayout
