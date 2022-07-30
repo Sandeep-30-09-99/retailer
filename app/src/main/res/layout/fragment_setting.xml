@@ -22,25 +22,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/_17sdp"
-                android:onClick="@{v->vm.onClick(v)}"
-                android:src="@drawable/ic_back_svg"
-                app:tint="@color/white" />
-
             <TextView
                 android:id="@+id/tv_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:layout_toEndOf="@+id/iv_back"
+
                 android:fontFamily="@font/gilroy_semibold"
-                android:text="New Order"
+                android:text="Settings"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15ssp" />
 
@@ -60,63 +50,44 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_shopping_cart" />
+                    android:src="@drawable/ic_search"
+                    android:tint="@color/white" />
 
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tvsearch"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/gilroy_medium"
+            android:fontFamily="@font/gilroy_bold"
             android:padding="@dimen/_5sdp"
-            android:text="Search for a product or a brand"
-            android:textColor="@color/dark_gray"
+            android:text="NeelKant"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header" />
 
-        <EditText
-            android:id="@+id/etSearchStore"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:background="@drawable/filled_gray_rounded_shape_10"
-            android:padding="@dimen/_7sdp"
-            android:paddingStart="@dimen/_10sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvsearch"
-            app:layout_constraintWidth_percent=".9" />
-
-        <ImageView
-            android:id="@+id/ivCanel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:src="@drawable/ic_right_arrow"
-            android:tint="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/etSearchStore"
-            app:layout_constraintEnd_toEndOf="@+id/etSearchStore"
-            app:layout_constraintTop_toTopOf="@+id/etSearchStore" />
-
 
         <TextView
-            android:id="@+id/tvSuggested"
+            android:id="@+id/tvDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_general_store"
+            android:drawablePadding="@dimen/_10sdp"
             android:fontFamily="@font/gilroy_medium"
             android:padding="@dimen/_5sdp"
-            android:text="Suggested Stores"
+            android:text="Lifestyle &amp; Wellness - 400018"
             android:textColor="@color/dark_gray"
-            android:visibility="gone"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etSearchStore" />
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSuggested"
@@ -125,10 +96,10 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_15sdp"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSuggested" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.recyclerview.widget.RecyclerView

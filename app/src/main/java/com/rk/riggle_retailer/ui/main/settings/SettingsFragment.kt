@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.rk.riggle_retailer.R
-import com.rk.riggle_retailer.databinding.FragmentSettingsBinding
+import com.rk.riggle_retailer.databinding.FragmentSettingBinding
 import com.rk.riggle_retailer.ui.base.BaseFragment
 import com.rk.riggle_retailer.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
+class SettingsFragment : BaseFragment<FragmentSettingBinding>() {
 
 
     companion object {
@@ -28,7 +28,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     }
 
     override fun getLayoutResource(): Int {
-        return R.layout.fragment_settings
+        return R.layout.fragment_setting
 
     }
 

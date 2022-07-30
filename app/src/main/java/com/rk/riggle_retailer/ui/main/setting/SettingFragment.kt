@@ -79,7 +79,7 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>() {
 
     private fun setUpRecyclerView() {
         searchAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>(
-            R.layout.list_of_search_items, BR.bean
+            R.layout.list_of_search_items,BR.bean
         ) { v, m, pos ->
             when (v.id) {
                 R.id.rlMain -> {
