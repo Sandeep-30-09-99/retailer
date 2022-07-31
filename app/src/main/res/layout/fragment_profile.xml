@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.rk.riggle_retailer.ui.main.search_store.SearchStoreVM" />
+            type="com.rk_tech.riggle_runner.ui.main.neworder.ProfileFragmentVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +30,6 @@
                 android:layout_marginStart="@dimen/_17sdp"
                 android:onClick="@{v->vm.onClick(v)}"
                 android:src="@drawable/ic_back_svg"
-
                 app:tint="@color/white" />
 
             <TextView

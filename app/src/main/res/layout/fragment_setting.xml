@@ -69,7 +69,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBotgtomOf="@id/header" />
+            app:layout_constraintTop_toBottomOf="@id/header" />
 
 
         <TextView
@@ -88,36 +88,57 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvName" />
 
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetail" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:paddingStart="@dimen/_15sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_15sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetail"
+            app:layout_constraintTop_toBottomOf="@+id/iv"
             tools:itemCount="6"
             tools:listitem="@layout/list_of_settings" />
+
+
+        <ImageView
+            android:id="@+id/ivLogout"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_log_out"
+            android:tint="@color/black_theme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvSettings" />
 
         <TextView
             android:id="@+id/tvLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:drawableStart="@drawable/ic_log_out"
-            android:drawablePadding="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_2sdp"
             android:fontFamily="@font/gilroy_medium"
-            android:padding="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
             android:text="Logout"
-            android:textColor="@color/dark_gray"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvSettings" />
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLogout"
+            app:layout_constraintStart_toEndOf="@+id/ivLogout"
+            app:layout_constraintTop_toTopOf="@+id/ivLogout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

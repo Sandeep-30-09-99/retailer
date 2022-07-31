@@ -1,6 +1,10 @@
 package com.rk.riggle_retailer.data.response;
 
+import androidx.annotation.LayoutRes;
+
 public class SettingsData {
+
+    @LayoutRes
     private int img;
     private String name;
     private String detail;
@@ -9,7 +13,7 @@ public class SettingsData {
         return img;
     }
 
-    public SettingsData(int img, String name, String detail) {
+    public SettingsData(@LayoutRes int img, String name, String detail) {
         this.img = img;
         this.name = name;
         this.detail = detail;

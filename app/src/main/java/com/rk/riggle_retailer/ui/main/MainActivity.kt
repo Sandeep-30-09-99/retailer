@@ -76,7 +76,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     changeFragment(CreditFragment.TAG)
                 }
                 R.id.llFive -> {
-                    binding.selected = 4
+                    binding.selected = 5
                     changeFragment(SettingsFragment.TAG)
                 }
             }

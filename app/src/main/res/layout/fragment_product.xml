@@ -10,268 +10,301 @@
             type="com.rk.riggle_retailer.ui.main.brands.product.ProductFragmentVM" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
-        <RelativeLayout
-            android:id="@+id/header"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/text_color_dark"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/_17sdp"
-                android:onClick="@{v->vm.onClick(v)}"
-                android:src="@drawable/ic_back_svg"
-                app:tint="@color/white" />
-
-            <TextView
-                android:id="@+id/tv_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_toEndOf="@+id/iv_back"
-                android:fontFamily="@font/gilroy_semibold"
-                android:text="Deliverify Solution"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_cart"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:backgroundTint="@color/dark_gray_two"
-                android:onClick="@{v->vm.onClick(v)}"
-                app:cardCornerRadius="@dimen/_6sdp">
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/text_color_dark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/iv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_shopping_cart" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:src="@drawable/ic_back_svg"
+                    app:tint="@color/white" />
 
-            </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tv_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/iv_back"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Deliverify Solution"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
 
-        </RelativeLayout>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_cart"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
 
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:backgroundTint="@color/dark_gray_two"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    app:cardCornerRadius="@dimen/_6sdp">
 
-        <ImageView
-            android:id="@+id/ivProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/water_bottle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_shopping_cart" />
 
-        <TextView
-            android:id="@+id/tvProductName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:fontFamily="@font/gilroy_bold"
-            android:text="Neervana with added minerals..."
-            android:textSize="@dimen/_15ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+                </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/tvServiceBy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/gilroy_medium"
-            android:text="Neervana with added minerals..."
-            android:textColor="@color/secondary_green"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
-
-        <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/flow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/_5sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            app:constraint_referenced_ids="tvDeliveryTime,tvMOQ,tvProfit"
-            app:flow_horizontalGap="@dimen/_8sdp"
-            app:flow_wrapMode="chain"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvServiceBy"
-            app:layout_constraintWidth_percent=".8" />
+            </RelativeLayout>
 
 
-        <TextView
-            android:id="@+id/tvDeliveryTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_delivery_time"
-            android:drawablePadding="@dimen/_1sdp"
-            android:text="Delivery: 3 days"
-            android:textSize="@dimen/_11ssp"
-            app:layout_constraintHorizontal_weight="2" />
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/water_bottle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header" />
 
-        <TextView
-            android:id="@+id/tvProfit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:drawableStart="@drawable/ic_heart"
-            android:drawablePadding="@dimen/_2sdp"
-            android:text="Profit: Rs. 34"
-            android:textSize="@dimen/_11ssp"
-            app:layout_constraintHorizontal_weight="1" />
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="Neervana with added minerals..."
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
 
-        <TextView
-            android:id="@+id/tvMOQ"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_bullet_list"
-            android:drawablePadding="@dimen/_2sdp"
-            android:text="MOQ: 3"
-            android:textSize="@dimen/_11ssp"
-            app:layout_constraintHorizontal_weight="1" />
+            <TextView
+                android:id="@+id/tvServiceBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Neervana with added minerals..."
+                android:textColor="@color/secondary_green"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
 
-        <TextView
-            android:id="@+id/tvPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/gilroy_bold"
-            android:text="Rs. 125"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/flow" />
-
-        <TextView
-            android:id="@+id/tvMRP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:fontFamily="@font/gilroy_medium"
-            android:text=" MRP Rs. 199"
-            android:textColor="@color/gray_c7"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
-            app:layout_constraintStart_toEndOf="@+id/tvPrice"
-            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
-
-        <TextView
-            android:id="@+id/tvViewBulkOffer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:fontFamily="@font/gilroy_bold"
-            android:text="VIEW ALL OFFER"
-            android:textColor="@color/orange"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
-
-        <TextView
-            android:id="@+id/tvAdd"
-            style="@style/TextView.MediumSemibold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_round_orange_solid_5sdp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingHorizontal="@dimen/_20sdp"
-            android:paddingVertical="@dimen/_7sdp"
-            android:singleLine="true"
-            android:text="ADD"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/gray_rounded_shape"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAdd"
-            app:layout_constraintWidth_percent=".85" />
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:constraint_referenced_ids="tvDeliveryTime,tvMOQ,tvProfit"
+                app:flow_horizontalGap="@dimen/_8sdp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvServiceBy"
+                app:layout_constraintWidth_percent=".8" />
 
 
-        <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/flow_r_coin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tv_r_earn,iv_r,tv_r_coin"
-            app:flow_horizontalGap="@dimen/_5sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/view" />
+            <TextView
+                android:id="@+id/tvDeliveryTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_delivery_time"
+                android:drawablePadding="@dimen/_1sdp"
+                android:text="Delivery: 3 days"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintHorizontal_weight="2" />
 
-        <TextView
-            android:id="@+id/tv_r_earn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Earn 20" />
+            <TextView
+                android:id="@+id/tvProfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:drawableStart="@drawable/ic_heart"
+                android:drawablePadding="@dimen/_2sdp"
+                android:text="Profit: Rs. 34"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintHorizontal_weight="1" />
 
-        <TextView
-            android:id="@+id/tv_r_coin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="coins" />
+            <TextView
+                android:id="@+id/tvMOQ"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_bullet_list"
+                android:drawablePadding="@dimen/_2sdp"
+                android:text="MOQ: 3"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintHorizontal_weight="1" />
 
-        <ImageView
-            android:id="@+id/iv_r"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_r_letter" />
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="Rs. 125"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flow" />
 
-        <TextView
-            android:id="@+id/tvAbout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:fontFamily="@font/gilroy_medium"
-            android:text="About this product"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            <TextView
+                android:id="@+id/tvMRP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text=" MRP Rs. 199"
+                android:textColor="@color/gray_c7"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+                app:layout_constraintStart_toEndOf="@+id/tvPrice"
+                app:layout_constraintTop_toTopOf="@+id/tvPrice" />
 
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:fontFamily="@font/gilroy_regular"
-            android:lineSpacingExtra="@dimen/_5sdp"
-            android:paddingVertical="@dimen/_5sdp"
-            android:paddingEnd="@dimen/_7sdp"
-            android:text="New powerful formula efforlessly removes hard water stains, accumulated dirt and other tough stains. Its convenient trigger helps you spray directly on the stains for maximum effectiveness. Perfect Glass and windshield Cleaner."
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+            <TextView
+                android:id="@+id/tvViewBulkOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="VIEW ALL OFFER"
+                android:textColor="@color/orange"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvAdd"
+                style="@style/TextView.MediumSemibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_round_orange_solid_5sdp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:singleLine="true"
+                android:text="ADD"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/gray_rounded_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdd"
+                app:layout_constraintWidth_percent=".85" />
+
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow_r_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_r_earn,iv_r,tv_r_coin"
+                app:flow_horizontalGap="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tv_r_earn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earn 20" />
+
+            <TextView
+                android:id="@+id/tv_r_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="coins" />
+
+            <ImageView
+                android:id="@+id/iv_r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_r_letter" />
+
+            <TextView
+                android:id="@+id/tvAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="About this product"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_7sdp"
+                android:text="New powerful formula efforlessly removes hard water stains, accumulated dirt and other tough stains. Its convenient trigger helps you spray directly on the stains for maximum effectiveness. Perfect Glass and windshield Cleaner."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+
+
+            <TextView
+                android:id="@+id/tvRelatedProdudct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Related Products"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/rvRelatedProduct"
+                android:background="@color/gray_f4"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRelatedProdudct"
+                tools:listitem="@layout/list_of_suggested_products" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </layout>

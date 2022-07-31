@@ -27,9 +27,11 @@
 
         <ImageView
             android:id="@+id/ivLogo"
+            simpleRecourse="@{bean.img}"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@{bean.img}"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+            android:tint="@color/black_theme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +46,7 @@
             android:fontFamily="@font/gilroy_bold"
             android:lines="1"
             android:text="@{bean.name}"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
             android:textColor="@color/black_85"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ivLogo"
@@ -59,6 +62,7 @@
             android:text="@{bean.detail}"
             android:textColor="@color/black_68"
             android:textSize="14sp"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivLogo"
             app:layout_constraintTop_toBottomOf="@+id/tvCategoryName" />

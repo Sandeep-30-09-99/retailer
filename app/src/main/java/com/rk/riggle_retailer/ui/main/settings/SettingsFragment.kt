@@ -16,6 +16,8 @@ import com.rk.riggle_retailer.databinding.ListOfTopCategoriesItemsBinding
 import com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter
 import com.rk.riggle_retailer.ui.base.BaseFragment
 import com.rk.riggle_retailer.ui.base.BaseViewModel
+import com.rk.riggle_retailer.ui.main.MainActivity
+import com.rk.riggle_retailer.ui.main.profile.edit_profile.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,7 +46,9 @@ class SettingsFragment : BaseFragment<FragmentSettingBinding>() {
         return viewModel
     }
 
+    private var mainActivity: MainActivity? = null
     override fun onCreateView(view: View) {
+        mainActivity = activity as MainActivity
         initSettingAdapter()
     }
 
@@ -52,6 +56,11 @@ class SettingsFragment : BaseFragment<FragmentSettingBinding>() {
     private fun initSettingAdapter() {
         settingAdapter =
             SimpleRecyclerViewAdapter(R.layout.list_of_settings, BR.bean) { v, m, pos ->
+                when (m.name) {
+                    "PROFILE" -> {
+                        mainActivity?.addSubFragment(TAG, ProfileFragment.newInstance())
+                    }
+                }
             }
         val list = ArrayList<SettingsData>()
         list.add(
@@ -77,7 +86,13 @@ class SettingsFragment : BaseFragment<FragmentSettingBinding>() {
                 "See your earnings and benefits"
             )
         )
-        list.add(SettingsData(R.drawable.ic_call_svg, "CONTACT US", "Need help? We’re listening and happy to assist"))
+        list.add(
+            SettingsData(
+                R.drawable.ic_call_svg,
+                "CONTACT US",
+                "Need help? We’re listening and happy to assist"
+            )
+        )
         settingAdapter.list = list
         binding.rvSettings.adapter = settingAdapter
     }
