@@ -5,275 +5,328 @@
 
     <data>
 
-
+        <variable
+            name="vm"
+            type="com.rk.riggle_retailer.ui.main.search_store.SearchStoreVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        <RelativeLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/text_color_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!--AppBarLayout helps the toolbar and other components to react on
-                scroll changes. I am using Dark theme for AppBarLayout.
-                Inside this AppBarLayout i
-                have used CollapsingToolbarLayout. -->
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appBarLayout"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:src="@drawable/ic_back_svg"
 
-                <!-- In CollapsingToolbarLayout sompe important attributes are:
-                 i)  app:layout_scrollFlags which is used to specify how collapsing
-                     layout behaves when content is scrolled.I have used
-                     app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-                     so it will scroll until it's is completely collapsed.
-                 ii) app:contentScrim="@color/green" that specifies the color
-                      of the collapsed toolbar -->
-                <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:layout_width="match_parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/iv_back"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cart"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:backgroundTint="@color/dark_gray_two"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_6sdp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_search"
+                    android:tint="@color/white" />
 
-                    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-                    <!--app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"-->
-                    <!--app:title="@string/app_name"-->
+            </androidx.cardview.widget.CardView>
 
-                    <!--We are adding the image that we have added earlier
-                          in the drawable folder.The attribute app:layout_collapseMode="parallax"
-                          causes the image to move when user scrolls at a specific ratio. -->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:scaleType="centerCrop"
-                        app:layout_collapseMode="parallax" />
+        </RelativeLayout>
 
-                    <!-- The attribute app:layout_collapseMode="pin" is set so that
-                         sticks to the top when the user scrolls the view up-->
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="?attr/actionBarSize"
-                        app:layout_collapseMode="parallax">
-
-                        <TextView
-                            android:id="@+id/tvToday"
-                            android:layout_width="@dimen/_150sdp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_15sdp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/font_regular"
-                            android:foreground="?selectableItemBackground"
-                            android:maxLines="1"
-                            android:gravity="center"
-
-                            android:padding="@dimen/_5sdp"
-                            android:textSize="12sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <ImageView
-                            android:id="@+id/ivPrevious"
-                            android:layout_width="@dimen/_24sdp"
-                            android:layout_height="@dimen/_24sdp"
-                            android:layout_marginEnd="@dimen/_20sdp"
-
-                            android:rotation="90"
-                            android:padding="@dimen/_7sdp"
-                            android:src="@drawable/ic_drop_down_icon"
-                            app:layout_constraintBottom_toBottomOf="@+id/tvToday"
-                            app:layout_constraintEnd_toStartOf="@+id/tvToday"
-                            app:layout_constraintTop_toTopOf="@+id/tvToday" />
-
-                        <ImageView
-                            android:id="@+id/ivNext"
-                            android:layout_width="@dimen/_24sdp"
-                            android:layout_height="@dimen/_24sdp"
-                            android:layout_marginStart="@dimen/_20sdp"
-
-                            android:rotation="-90"
-                            android:padding="@dimen/_7sdp"
-                            android:src="@drawable/ic_drop_down_icon"
-                            app:layout_constraintBottom_toBottomOf="@+id/tvToday"
-                            app:layout_constraintStart_toEndOf="@+id/tvToday"
-                            app:layout_constraintTop_toTopOf="@+id/tvToday" />
-
-                        <androidx.constraintlayout.helper.widget.Flow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_40sdp"
-                            android:layout_marginTop="@dimen/_20sdp"
-                            android:layout_marginEnd="@dimen/_40sdp"
-                            android:orientation="horizontal"
-                            app:constraint_referenced_ids="clOne"
-                            app:layout_constraintTop_toBottomOf="@+id/tvToday" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/clOne"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/ivOne"
-                                android:layout_width="@dimen/_24sdp"
-                                android:layout_height="@dimen/_24sdp"
-
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/tvPending"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_7sdp"
-                                android:layout_marginEnd="8dp"
-                                android:ellipsize="end"
-                                android:fontFamily="@font/font_regular"
-                                android:maxLines="1"
-                                android:text="@string/pending"
-                                android:textColor="@color/white"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toEndOf="@+id/ivOne"
-                                app:layout_constraintTop_toTopOf="@+id/ivOne" />
-
-                            <TextView
-                                android:id="@+id/tvTripsOne"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_7sdp"
-                                android:layout_marginEnd="8dp"
-                                android:ellipsize="end"
-                                android:fontFamily="@font/font_regular"
-                                android:maxLines="1"
-
-                                android:textColor="@color/white"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toEndOf="@+id/ivOne"
-                                app:layout_constraintTop_toBottomOf="@+id/tvPending" />
-
-                            <TextView
-                                android:id="@+id/tvCountOne"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:layout_marginEnd="8dp"
-                                android:ellipsize="end"
-                                android:fontFamily="@font/font_bold"
-                                android:maxLines="1"
-                                android:text="19"
-                                android:textColor="@color/white"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toEndOf="@+id/tvTripsOne"
-                                app:layout_constraintTop_toBottomOf="@+id/tvPending" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            android:id="@+id/vOne"
-                            android:layout_width="0dp"
-                            android:layout_height="@dimen/_1sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:background="@color/white"
-                            app:layout_constraintEnd_toEndOf="@+id/clOne"
-                            app:layout_constraintStart_toStartOf="@+id/clOne"
-                            app:layout_constraintTop_toBottomOf="@+id/clOne" />
-
-                        <TextView
-                            android:id="@+id/tvAmountValue"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/font_bold"
-                            android:maxLines="1"
-
-                            android:text="Rs. 0"
-
-                            android:textSize="@dimen/_18sdp"
-                            app:layout_constraintEnd_toEndOf="@+id/vOne"
-                            app:layout_constraintStart_toStartOf="@+id/vOne"
-                            app:layout_constraintTop_toBottomOf="@+id/vOne" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"
-
-                        app:layout_collapseMode="pin">
-
-                        <TextView
-                            android:id="@+id/tvServiceHub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/font_bold"
-                            android:gravity="center"
-                            android:maxLines="1"
-                            android:text="Deliverify Solutions"
-                            android:textSize="@dimen/_16sdp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:layout_marginEnd="16dp"
-                            />
-
-                    </androidx.appcompat.widget.Toolbar>
-
-                </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <!--Now add the NestedScollView-->
-            <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fillViewport="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                        android:id="@+id/srl"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginLeft="@dimen/_20sdp"
-                        android:layout_marginRight="@dimen/_20sdp"
-                        android:background="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rvOrders"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:padding="@dimen/_5sdp"
+            android:text="OwnerInfo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
 
 
-            </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/tvDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:drawableLeft="@drawable/ic_edit_pencil"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/orange"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_medium"
+            android:lines="1"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:text="ADD MEMBER"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOwners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:itemCount="2"
+            tools:listitem="@layout/list_of_owner" />
+
+
+        <TextView
+            android:id="@+id/tvStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:padding="@dimen/_5sdp"
+            android:text="Store Info"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvOwners" />
+
+
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:drawableLeft="@drawable/ic_edit_pencil"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/orange"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_medium"
+            android:lines="1"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:text="Edit"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvStore" />
+
+
+        <ImageView
+            android:id="@+id/ivStore"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStore" />
+
+
+        <TextView
+            android:id="@+id/tvStoreName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gilroy_medium"
+            android:lines="1"
+            android:text="Store Name"
+            android:textColor="@color/light_gray_82"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivStore" />
+
+
+        <TextView
+            android:id="@+id/txtStoreName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="Deliverify Solutions"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStoreName" />
+
+
+        <TextView
+            android:id="@+id/tvPincode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gilroy_medium"
+            android:lines="1"
+            android:text="Pincode"
+            android:textColor="@color/light_gray_82"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtStoreName" />
+
+
+        <TextView
+            android:id="@+id/txtPincode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="410058"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPincode" />
+
+        <TextView
+            android:id="@+id/tvStoreType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gilroy_medium"
+            android:lines="1"
+            android:text="Store Type"
+            android:textColor="@color/light_gray_82"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPincode" />
+
+
+        <TextView
+            android:id="@+id/txtStoreType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="General Store"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStoreType" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gilroy_medium"
+            android:lines="1"
+            android:text="Address"
+            android:textColor="@color/light_gray_82"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtStoreType" />
+
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="C-15, Vashi Plaza, Sector 1, Vashi, Navi Mumbai"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+        <TextView
+            android:id="@+id/tvBusinessProof"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gilroy_medium"
+            android:lines="1"
+            android:text="Business Proof"
+            android:textColor="@color/light_gray_82"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+
+        <TextView
+            android:id="@+id/txtBusinessProof"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="GST Number: MA7382KJ827"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBusinessProof" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

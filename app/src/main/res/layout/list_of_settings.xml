@@ -13,7 +13,7 @@
 
         <variable
             name="bean"
-            type="com.rk.riggle_retailer.data.response.DummyResponse" />
+            type="com.rk.riggle_retailer.data.response.SettingsData" />
 
         <variable
             name="callback"
@@ -29,11 +29,10 @@
             android:id="@+id/ivLogo"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_general_store"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:src="@{bean.img}"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCategoryName"
@@ -44,12 +43,11 @@
             android:ellipsize="end"
             android:fontFamily="@font/gilroy_bold"
             android:lines="1"
-            android:text="Sai Prasad Store"
+            android:text="@{bean.name}"
             android:textColor="@color/black_85"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ivLogo"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Sai Prasad Store" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -58,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/gilroy_medium"
-            android:text="Frustar, Ala and 7 more"
+            android:text="@{bean.detail}"
             android:textColor="@color/black_68"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"

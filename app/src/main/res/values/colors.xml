@@ -133,6 +133,7 @@
     <color name="status_color">#15AB87</color>
     <color name="status_color_back">#E2EFEC</color>
     <color name="light_gray">#F0EDEA</color>
+    <color name="light_gray_82">#747F82</color>
     <color name="dark_gray">#626262</color>
     <color name="dark_gray_2">#C7C7C7</color>
     <color name="dark_gray_two">#767D7E</color>

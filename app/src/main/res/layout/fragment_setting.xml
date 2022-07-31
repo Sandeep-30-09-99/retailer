@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.rk.riggle_retailer.ui.main.search_store.SearchStoreVM" />
+            type="com.rk.riggle_retailer.ui.main.settings.SettingsVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,7 +69,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header" />
+            app:layout_constraintTop_toBotgtomOf="@id/header" />
 
 
         <TextView
@@ -90,31 +90,35 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSuggested"
+            android:id="@+id/rvSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_15sdp"
-            android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearchAdapter"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:padding="@dimen/_10sdp"
-            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etSearchStore"
-            tools:itemCount="2"
-            tools:listitem="@layout/list_of_search_items" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDetail"
+            tools:itemCount="6"
+            tools:listitem="@layout/list_of_settings" />
+
+        <TextView
+            android:id="@+id/tvLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_log_out"
+            android:drawablePadding="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:padding="@dimen/_5sdp"
+            android:text="Logout"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvSettings" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

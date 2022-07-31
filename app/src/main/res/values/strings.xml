@@ -31,6 +31,7 @@
     <string name="working_region">Working Region</string>
     <string name="working_city">Working City</string>
     <string name="living_address">Living Address</string>
+    <string name="address">Address</string>
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">Already have an account? <font color='#01C6DB'>Login</font></string>
     <string name="by_signing_privacy_policy">By signing up you are ready to accept the <font color='#FECF4C'>privacy policy</font> &amp; <font color='#FECF4C'>terms &amp; conditions</font></string>
@@ -103,8 +104,11 @@
     <string name="order_now">ORDER NOW</string>
     <!--Asterik Text-->
     <string name="your_name">Your Name<font color='#D64A5B'>*</font></string>
+    <string name="user_name">User Name<font color='#D64A5B'>*</font></string>
+    <string name="user_number">User Number<font color='#D64A5B'>*</font></string>
     <string name="business_proof">Business Proof</string>
     <string name="store_name">Store Name<font color='#D64A5B'>*</font></string>
     <string name="pincode">PINCODE<font color='#D64A5B'>*</font></string>
     <string name="store_type">Store Type<font color='#D64A5B'>*</font></string>
+    <string name="store_type_without_asterik">Store Type<font color='#D64A5B'>*</font></string>
 </resources>
