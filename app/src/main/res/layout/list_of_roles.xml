@@ -7,7 +7,7 @@
 
         <variable
             name="bean"
-            type="com.rk.riggle_retailer.data.response.DummyResponse" />
+            type="com.rk.riggle_retailer.data.response.DummyData" />
 
         <variable
             name="callback"

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/_15sdp">
@@ -164,6 +165,36 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBusiness"
+            app:layout_constraintWidth_percent=".9" />
+
+        <TextView
+            android:id="@+id/tvBProof"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="GST Number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etBusiness" />
+
+        <EditText
+            android:id="@+id/etBusinessProof"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/filled_gray_rounded_shape_10"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint=" XXXXXXXX"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tvSave"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBProof"
             app:layout_constraintWidth_percent=".9" />
 
 

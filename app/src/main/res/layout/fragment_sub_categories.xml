@@ -84,15 +84,43 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSubCategories"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_10sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvShowingBrand"
+            tools:itemCount="5"
             tools:listitem="@layout/list_of_sub_category" />
+
+        <TextView
+            android:id="@+id/tvOtherCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="Other Categories"
+            android:textColor="@color/black_theme"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvSubCategories" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOtherCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:overScrollMode="always"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOtherCategories"
+            tools:itemCount="3"
+            tools:listitem="@layout/list_of_top_categories_items" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

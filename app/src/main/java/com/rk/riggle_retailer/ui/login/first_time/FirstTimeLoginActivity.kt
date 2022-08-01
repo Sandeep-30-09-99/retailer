@@ -15,6 +15,7 @@ import com.rk.riggle_retailer.databinding.ListOfStoreTypeBinding
 import com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter
 import com.rk.riggle_retailer.ui.base.BaseActivity
 import com.rk.riggle_retailer.ui.base.BaseViewModel
+import com.rk.riggle_retailer.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_product.view.*
 import kotlinx.android.synthetic.main.layout_firsttime_login.*
@@ -46,6 +47,14 @@ class FirstTimeLoginActivity : BaseActivity<LayoutFirsttimeLoginBinding>() {
         showLayout(1)
         viewModel.onClick.observe(this) {
             when (it?.id) {
+                R.id.iv_back -> {
+                    if (binding.active == 3) {
+                        showLayout(2)
+                    } else if (binding.active == 2) {
+                        showLayout(1)
+                    }
+                }
+
                 R.id.btn_next -> {
                     if (binding.deactive == true) {
                         return@observe
@@ -54,6 +63,8 @@ class FirstTimeLoginActivity : BaseActivity<LayoutFirsttimeLoginBinding>() {
                         showLayout(2)
                     } else if (binding.active == 2) {
                         showLayout(3)
+                    } else if (binding.active == 3) {
+                        startActivity(MainActivity.newIntent(this))
                     }
                 }
             }
@@ -65,6 +76,7 @@ class FirstTimeLoginActivity : BaseActivity<LayoutFirsttimeLoginBinding>() {
         binding.active = no
         when (no) {
             1 -> {
+                iv_back.visibility = View.GONE
                 store_info.visibility = View.VISIBLE
                 business_info.visibility = View.GONE
                 owner_info.visibility = View.GONE
@@ -72,12 +84,14 @@ class FirstTimeLoginActivity : BaseActivity<LayoutFirsttimeLoginBinding>() {
             }
             2 -> {
                 store_info.visibility = View.GONE
+                iv_back.visibility = View.VISIBLE
                 business_info.visibility = View.VISIBLE
                 owner_info.visibility = View.GONE
 
             }
             3 -> {
                 store_info.visibility = View.GONE
+                iv_back.visibility = View.VISIBLE
                 business_info.visibility = View.GONE
                 owner_info.visibility = View.VISIBLE
 

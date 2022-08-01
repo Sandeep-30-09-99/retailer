@@ -107,6 +107,22 @@
                 app:layout_constraintTop_toTopOf="@+id/view" />
 
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchAdapter"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:elevation="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSearch"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_of_search_items" />
+
+
             <TextView
                 android:id="@+id/tvCategoryName"
                 android:layout_width="wrap_content"

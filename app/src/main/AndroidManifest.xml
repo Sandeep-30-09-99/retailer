@@ -50,12 +50,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.rk.riggle_retailer.ui.main.MainActivity"
-            android:exported="false"
-            />
-        <activity android:name="com.rk.riggle_retailer.ui.login.LoginActivity"
-            android:exported="false"
-            />
+        <activity
+            android:name="com.rk.riggle_retailer.ui.main.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.rk.riggle_retailer.ui.login.first_time.FirstTimeLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.rk.riggle_retailer.ui.login.LoginActivity"
+            android:exported="false" />
 
 
         <receiver

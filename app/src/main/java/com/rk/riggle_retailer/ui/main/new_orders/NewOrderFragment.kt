@@ -1,6 +1,8 @@
 package com.rk.riggle_retailer.ui.main.new_orders
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.viewModels
 import com.rk.riggle_retailer.R
+import com.rk.riggle_retailer.data.response.DummyData
 import com.rk.riggle_retailer.data.response.DummyResponse
 import com.rk.riggle_retailer.databinding.*
 import com.rk.riggle_retailer.di.base.SimpleRecyclerViewAdapter
@@ -48,6 +51,83 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>() {
     override fun onCreateView(view: View) {
         mainActivity = activity as MainActivity
         initCategoryAdapter()
+        setUpRecyclerView()
+        setUpResultAdapter()
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                if (binding.etSearch.text.toString().isEmpty()) {
+                    binding.rvSearchAdapter.visibility = View.GONE
+                } else {
+                    binding.rvSearchAdapter.visibility = View.VISIBLE
+                    searchAdapter?.list = filterList(binding.etSearch.text.toString())
+                    binding.rvSearchAdapter.adapter = searchAdapter
+                }
+            }
+        })
+    }
+
+    private fun filterList(text: String): ArrayList<DummyData> {
+        val list = ArrayList<DummyData>()
+        nameList?.let {
+            for (i in nameList?.indices!!) {
+                if (nameList?.get(i)?.name?.contains(text, true) == true) {
+                    list.add(nameList?.get(i)!!)
+                }
+            }
+            return list
+        }
+        return list
+    }
+
+    private var nameList: ArrayList<DummyData>? = null
+    private var searchAdapter: SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>? =
+        null
+
+    private fun setUpRecyclerView() {
+        searchAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfSearchItemsBinding>(
+            R.layout.list_of_search_items, com.rk.riggle_retailer.BR.bean
+        ) { v, m, pos ->
+            when (v.id) {
+                R.id.rlMain -> {
+                    binding.etSearch.setText(m?.name!!)
+                    binding.rvSearchAdapter.visibility = View.GONE
+                }
+
+            }
+        }
+        nameList = ArrayList<DummyData>()
+        nameList?.add(DummyData("Sandeep", ""))
+        nameList?.add(DummyData("Rahul", ""))
+        searchAdapter?.list = nameList
+
+    }
+
+
+    private var resultAdapter: SimpleRecyclerViewAdapter<DummyData, ListOfProductsBinding>? =
+        null
+
+    private fun setUpResultAdapter() {
+        resultAdapter = SimpleRecyclerViewAdapter<DummyData, ListOfProductsBinding>(
+            R.layout.list_of_products, com.rk.riggle_retailer.BR.bean
+        ) { v, m, pos ->
+            when (v.id) {
+                R.id.rlMain -> {
+
+                }
+
+            }
+        }
+        nameList = ArrayList<DummyData>()
+        nameList?.add(DummyData("Sandeep", ""))
+        nameList?.add(DummyData("Rahul", ""))
+        resultAdapter?.list = nameList
+
     }
 
     private lateinit var categoryAdapter: SimpleRecyclerViewAdapter<DummyResponse, ListOfTopCategoriesItemsBinding>

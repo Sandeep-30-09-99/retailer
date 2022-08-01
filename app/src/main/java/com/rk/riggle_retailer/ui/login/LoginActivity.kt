@@ -16,6 +16,7 @@ import com.rk.riggle_retailer.R
 import com.rk.riggle_retailer.databinding.ActivityLoginBinding
 import com.rk.riggle_retailer.ui.base.BaseActivity
 import com.rk.riggle_retailer.ui.base.BaseViewModel
+import com.rk.riggle_retailer.ui.login.first_time.FirstTimeLoginActivity
 import com.rk.riggle_retailer.ui.main.MainActivity
 import com.rk.riggle_retailer.utils.showInfoToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -152,7 +153,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun verifyOtp() {
-        startActivity(MainActivity.newIntent(this))
+        startActivity(FirstTimeLoginActivity.newIntent(this))
         when {
             viewModel.field_otp.get().isNullOrBlank() -> {
                 binding.etotp.error = "Invalid"
@@ -165,7 +166,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                     "160059"
                 )
                 viewModel.verifyOtp(parm)*/
-                startActivity(MainActivity.newIntent(this))
+                startActivity(FirstTimeLoginActivity.newIntent(this))
             }
         }
     }

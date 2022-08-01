@@ -5,7 +5,7 @@
 
         <variable
             name="bean"
-            type="com.rk.riggle_retailer.data.response.DummyResponse" />
+            type="com.rk.riggle_retailer.data.response.DummyData" />
 
         <variable
             name="callback"
@@ -23,6 +23,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/bg_white"
         android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
         android:padding="@dimen/_10sdp">
 
